@@ -39,11 +39,17 @@ QString Calendar::Output(int yy, int mm, int dd)
     }
     if(mm == 2)
     {
-        if(yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0) )
+        if(dd < 28)
+            return QVariant(yy).toString()+"-"+QVariant(mm).toString()+"-"+QVariant(dd+1).toString();
+        else if(yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0) )
+        {
             if(dd == 29)
                 return QVariant(yy).toString()+"-"+QVariant(mm+1).toString()+"-1";
             else if(dd == 28)
                 return QVariant(yy).toString()+"-"+QVariant(mm).toString()+"-"+QVariant(dd+1).toString();
+        }
+        else
+            return QVariant(yy).toString()+"-"+QVariant(mm+1).toString()+"-1";
     }
-    return QVariant(yy).toString()+"-"+QVariant(mm+1).toString()+"-1";
+    return QVariant(yy).toString()+"-"+QVariant(mm).toString()+"-"+QVariant(dd+1).toString();
 }

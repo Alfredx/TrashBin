@@ -1,4 +1,5 @@
 #include "calendarunittest.h"
+#include <QDate>
 
 CalendarUnitTest::CalendarUnitTest()
 {
@@ -17,7 +18,15 @@ void CalendarUnitTest::Test()
         dd = excel->GetCellValueAt(i,"D").toInt();
         QString result = calendar->Input(yy,mm,dd);
         excel->SetCellValueAt(result,i,"F");
-        if(result.compare(excel->GetCellValueAt(i,"E")))
+        QString s = excel->GetCellValueAt(i,"E");
+        s.replace(10,9,"");
+        QDate tocompare(s.left(4).toInt(),s.mid(5,2).toInt(),s.right(2).toInt());
+        if(tocompare.isNull() && !result[0].isDigit())
+        {
+            excel->SetCellValueAt("True",i,"G");
+            continue;
+        }
+        if(!result.compare(tocompare.toString("yyyy-M-d")))
             excel->SetCellValueAt("True",i,"G");
         else
             excel->SetCellValueAt("False",i,"G");
