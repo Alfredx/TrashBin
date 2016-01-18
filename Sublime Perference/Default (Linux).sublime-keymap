@@ -1,2 +1,39 @@
 [
+	{ "keys": ["alt+j"], "command": "move", "args": {"by": "characters", "forward": false} },
+	{ "keys": ["alt+l"], "command": "move", "args": {"by": "characters", "forward": true} },
+	{ "keys": ["alt+i"], "command": "move", "args": {"by": "lines", "forward": false} },
+	{ "keys": ["alt+k"], "command": "move", "args": {"by": "lines", "forward": true} },
+	{ "keys": ["shift+alt+j"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
+	{ "keys": ["shift+alt+l"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
+	{ "keys": ["shift+alt+i"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
+	{ "keys": ["shift+alt+k"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
+	{ "keys": ["ctrl+alt+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["ctrl+alt+down"], "command": "select_lines", "args": {"forward": true} },
+	{ "keys": ["ctrl+alt+i"], "command": "scroll_lines", "args": {"amount": 1.0 } },
+	{ "keys": ["ctrl+alt+k"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+	{ "keys": ["ctrl+alt+j"], "command": "move", "args": {"by": "words", "forward": false} },
+	{ "keys": ["ctrl+alt+l"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+	{ "keys": ["ctrl+shift+alt+j"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
+	{ "keys": ["ctrl+shift+alt+l"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
+	{ "keys": ["alt+y"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["alt+u"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+	{ "keys": ["shift+alt+y"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+	{ "keys": ["shift+alt+u"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+	{ "keys": ["ctrl+alt+y"], "command": "move_to", "args": {"to": "bof", "extend": false} },
+	{ "keys": ["ctrl+alt+u"], "command": "move_to", "args": {"to": "eof", "extend": false} },
+	{ "keys": ["ctrl+shift+alt+y"], "command": "move_to", "args": {"to": "bof", "extend": true} },
+	{ "keys": ["ctrl+shift+alt+u"], "command": "move_to", "args": {"to": "eof", "extend": true} },	
+	{ "keys": ["alt+b"], "command": "move", "args": {"by": "pages", "forward": false} },
+	{ "keys": ["alt+n"], "command": "move", "args": {"by": "pages", "forward": true} },
+
+	{ "keys": ["ctrl+shift+s"], "command": "save_all" },
+
+	{
+		"keys":["ctrl+f9"],"caption": "SublimeREPL: Python - RUN current file","command": "run_existing_window_command", "args":
+		{
+			"id": "repl_python_run",
+			"file": "config/Python/Main.sublime-menu"
+		}
+	}
+
 ]
