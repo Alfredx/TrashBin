@@ -34,6 +34,8 @@
 			"id": "repl_python_run",
 			"file": "config/Python/Main.sublime-menu"
 		}
-	}
+	},
+    {"keys": ["ctrl+escape"], "command": "escape"},
+    {"keys": ["ctrl+shift+escape"], "command": "unescape"}
 
 ]
